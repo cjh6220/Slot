@@ -21,6 +21,9 @@ public class SlotLine : MonoBehaviour
     private bool baseLink = false;
     private TweenSeq tS;
 
+    public int NextOrderPosition { get; private set; }
+    public int CurrOrderPosition { get; private set; }
+
     public void CreateSlotCylinder()
     {
         // create Reel transform
@@ -34,7 +37,7 @@ public class SlotLine : MonoBehaviour
         float distTileY = tileSizeY + gapY; //old float distTileY = 3.48f;
 
         anglePerTileDeg = 360.0f / (float)tileCount;
-        
+
         anglePerTileRad = anglePerTileDeg * Mathf.Deg2Rad;
         float radius = (distTileY / 2f) / Mathf.Tan(anglePerTileRad / 2.0f); //old float radius = ((tileCount + 1) * distTileY) / (2.0f * Mathf.PI);
 
@@ -89,9 +92,11 @@ public class SlotLine : MonoBehaviour
 
     public void StartSpin(float spinStartDelay)
     {
+        Debug.LogError("스핀 시작");
         tS = new TweenSeq();
-        float inRotAngle = 0.15f;
-        float inRotTime = 7f;
+        float angleX = 0;
+        float inRotAngle = 7f;
+        float inRotTime = 0.15f;
 
         float oldVal = 0f;
 
@@ -105,9 +110,100 @@ public class SlotLine : MonoBehaviour
                                   })
                                   .AddCompleteCallBack(() =>
                                   {
-                                     callBack();
-                                  }).SetEase(EaseAnim.EaseLinear);//.SetDelay(startDelay);
+                                      callBack();
+                                  }).SetEase(EaseAnim.EaseLinear).SetDelay(spinStartDelay);
             });
+
+        float addRotateTime = 0f;
+        float mainRotateTimeRandomize = 0.1f;
+        float mainRotTime = 3;
+        float spinSpeedMultiplier = 1;
+        float outRotAngle = 7f;
+        
+        tS.Add((callBack) =>  // main rotation part
+        {
+            oldVal = 0f;
+            addRotateTime = Mathf.Max(0, addRotateTime);
+            mainRotateTimeRandomize = Mathf.Clamp(mainRotateTimeRandomize, 0f, 0.2f);
+            mainRotTime = 3;//addRotateTime + UnityEngine.Random.Range(mainRotTime * (1.0f - mainRotateTimeRandomize), mainRotTime * (1.0f + mainRotateTimeRandomize));
+
+            spinSpeedMultiplier = Mathf.Max(0, spinSpeedMultiplier);
+            angleX = GetAngleToNextSymb(NextOrderPosition) + anglePerTileDeg * tileCount * spinSpeedMultiplier;
+            //if (debugreel) Debug.Log(name + ", angleX : " + angleX);
+            SimpleTween.Value(gameObject, 0, -(angleX + outRotAngle + inRotAngle), mainRotTime)
+                              .SetOnUpdate((float val) =>
+                              {
+                                  // check rotation angle 
+                                  TilesGroup.Rotate(val - oldVal, 0, 0);
+                                  oldVal = val;
+                                  //if (val < -inRotAngle && val >= -(angleX + inRotAngle)) WrapSymbolTape(val + inRotAngle);
+                              })
+                              .AddCompleteCallBack(() =>
+                              {
+                                  //WrapSymbolTape(angleX);
+                                  topSector += Mathf.Abs(Mathf.RoundToInt(angleX / anglePerTileDeg));
+                                  topSector = (int)Mathf.Repeat(topSector, tileCount);
+                                  //if (debugreel) SignTopSymbol(topSector);
+
+                                  callBack();
+                              }).SetEase(EaseAnim.EaseLinear);
+        });
+
+
+        float outRotTime = 0.15f;
+        tS.Add((callBack) =>  // out rotation part
+            {
+                oldVal = 0f;
+                SimpleTween.Value(gameObject, 0, outRotAngle, outRotTime)
+                                  .SetOnUpdate((float val) =>
+                                  {
+                                      TilesGroup.Rotate(val - oldVal, 0, 0);
+                                      oldVal = val;
+                                  })
+                                  .AddCompleteCallBack(() =>
+                                  {
+                                      CurrOrderPosition = NextOrderPosition;
+                                      //rotCallBack?.Invoke();
+                                      callBack();
+                                  }).SetEase(EaseAnim.EaseLinear);
+            });
+
+        tS.Start();
     }
+
+    private float GetAngleToNextSymb(int nextOrderPosition)
+    {
+        if (CurrOrderPosition < nextOrderPosition)
+        {
+            return (nextOrderPosition - CurrOrderPosition) * anglePerTileDeg;
+        }
+        return (tileCount - CurrOrderPosition + nextOrderPosition) * anglePerTileDeg;
+    }
+
+    // private void WrapSymbolTape(float dA)
+    // {
+    //     int sectors = Mathf.Abs(Mathf.RoundToInt(dA / anglePerTileDeg));
+    //     //  if (sectors < tileCount-windowSize-2) return;
+
+    //     bool found = false;
+
+    //     for (int i = topSector + tempSectors; i < topSector + sectors + 3; i++)
+    //     {
+    //         int ip = (int)Mathf.Repeat(i, tileCount);
+    //         tempSectors = i - topSector; // if (debugreel) Debug.Log("search sectors: " + sectors + ";  i: " + i);
+
+    //         if (!found)
+    //         {
+    //             found = (ip == lastChanged);
+    //         }
+    //         else // wrap tape at last changed
+    //         {
+    //             //if (debugreel) Debug.Log("found: " + found);
+    //             int symNumber = symbOrder[GetNextSymb()];
+    //             slotSymbols[ip].SetIcon(sprites[symNumber], symNumber);
+    //             lastChanged = ip; // if (debugreel) Debug.Log("set symbol in: " + ip + "; tempsectors: " + tempSectors);
+    //         }
+    //     }
+    // }
 }
 

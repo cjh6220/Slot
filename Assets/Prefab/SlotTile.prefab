@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 407544}
   - component: {fileID: 21221170}
   - component: {fileID: 5897628}
+  - component: {fileID: -5807908765914165239}
   m_Layer: 0
   m_Name: SlotTile
   m_TagString: Untagged
@@ -101,3 +102,61 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.65
+--- !u!114 &-5807908765914165239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 192170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3a010a55e0f3bd44add87217e49bf77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sR: {fileID: 21221170}
+  OriginImg: {fileID: 21300000, guid: a380eaf558f635943925f4dfd64c1a20, type: 3}
+  SpinImg: {fileID: 21300000, guid: 0f7fda31384ad0544aae2e461b6952a6, type: 3}
+  deformer: {fileID: 0}
+  OriginImgList:
+  - {fileID: 21300000, guid: a380eaf558f635943925f4dfd64c1a20, type: 3}
+  - {fileID: 21300000, guid: ca6a84a237661ea43bff4d9d9d961b97, type: 3}
+  - {fileID: 21300000, guid: 18696915efaeed84198e4221a900d3ef, type: 3}
+  - {fileID: 21300000, guid: 94f97e3d3ab59214d8f4b2f6d51c09cf, type: 3}
+  - {fileID: 21300000, guid: 4305ee39b14b7c541b54f239ee79cbfb, type: 3}
+  - {fileID: 21300000, guid: 3723eafdb7c0e8c4ab05e770b6b37627, type: 3}
+  - {fileID: 21300000, guid: 130f0f683e09f4d4b88a2f8c4607c634, type: 3}
+  - {fileID: 21300000, guid: fe4f655d97817ab4b8d07ca1f7e9acee, type: 3}
+  - {fileID: 21300000, guid: 66cee2b5f5623f74a9192f843d593d92, type: 3}
+  - {fileID: 21300000, guid: e46ea88b4a4659249b1b00459dfa0c19, type: 3}
+  - {fileID: 21300000, guid: 591c8a293c4fe1e4d909052f70876cd6, type: 3}
+  - {fileID: 21300000, guid: cb401e87a60edd243b628a10a84dd77f, type: 3}
+  - {fileID: 21300000, guid: 6e5964e7293913f45b8292b969c9b1a1, type: 3}
+  - {fileID: 21300000, guid: 8e904b93bf647f94d96976c445e72f90, type: 3}
+  - {fileID: 21300000, guid: f71003490abf26143ac1691acbaea58d, type: 3}
+  - {fileID: 21300000, guid: 4eae222a1d6e5d345b08217892381b41, type: 3}
+  - {fileID: 21300000, guid: 0ed132a713f617f45b97db2f21c151a2, type: 3}
+  - {fileID: 21300000, guid: 9610bcaf7286e41479517af5d4f8290e, type: 3}
+  - {fileID: 21300000, guid: 3af8ce1a482ce744b869fe362d6ce145, type: 3}
+  - {fileID: 21300000, guid: 10a189014e610764e83a0c34bf62aca6, type: 3}
+  SpinImgList:
+  - {fileID: 21300000, guid: 0f7fda31384ad0544aae2e461b6952a6, type: 3}
+  - {fileID: 21300000, guid: e00d47bca893f5f41b5e8f426a1cd3fe, type: 3}
+  - {fileID: 21300000, guid: 39fbdff067e213f4aad4487b1a07d553, type: 3}
+  - {fileID: 21300000, guid: 276c4a153ecf65946a5c7a4334f4e4d9, type: 3}
+  - {fileID: 21300000, guid: 3286bb659accebd46b74733627195e48, type: 3}
+  - {fileID: 21300000, guid: 639afc81d04d42c41b225252c72e9cc2, type: 3}
+  - {fileID: 21300000, guid: ef91661c85d29a14091658e8a0c48d53, type: 3}
+  - {fileID: 21300000, guid: a8d3a121822a1974ca39ae332900506c, type: 3}
+  - {fileID: 21300000, guid: acabe0484abc20946a47400f3edad243, type: 3}
+  - {fileID: 21300000, guid: ce5ad5f3665a18141921dcd66a16c517, type: 3}
+  - {fileID: 21300000, guid: f8f3be7618589824796538d29aadf019, type: 3}
+  - {fileID: 21300000, guid: e16f7df2c7549d747bf451879180db79, type: 3}
+  - {fileID: 21300000, guid: 72ff1aee8f476474f8b1849c66bbb9c7, type: 3}
+  - {fileID: 21300000, guid: 17447424d816f3d42b5b6566d99a9430, type: 3}
+  - {fileID: 21300000, guid: 3e807c4c44ca49949a414b654a1447e6, type: 3}
+  - {fileID: 21300000, guid: 98c60e6124409c84ab90f908277c9c0a, type: 3}
+  - {fileID: 21300000, guid: f45894a460604fb4985c5461f2f36205, type: 3}
+  - {fileID: 21300000, guid: 3143007241e21604f9dcdf63708287a0, type: 3}
+  - {fileID: 21300000, guid: 0f300df4c1884f2408b20e08f05bd41c, type: 3}
+  - {fileID: 21300000, guid: 4cb742ed1ae9e044abdc732fb97176f8, type: 3}

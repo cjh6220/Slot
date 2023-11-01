@@ -17,7 +17,6 @@ public class GameController : MonoBehaviour
 
     public void OnClickSpin()
     {
-        Debug.LogError("클릭");
         for (int i = 0; i < SlotLines.Length; i++)
         {
             SlotLines[i].StartSpin(i);
