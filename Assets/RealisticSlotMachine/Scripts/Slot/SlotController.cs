@@ -520,7 +520,8 @@ namespace Mkey
             for (int i = 0; i < slotGroupsBeh.Length; i++)
             {
                 int n = i;
-                int r = rands[i];
+                int r = rands[i];              
+                Debug.LogError(i + " = " + r);
 
                 if (holdReels == null || (holdReels != null && !holdReels[i]))
                 {

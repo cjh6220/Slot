@@ -455,6 +455,7 @@ namespace Mkey
 
         public void Spin_Click()
         {
+            Debug.LogError("Spin_Click");
             if (Auto) { ResetAutoSpinsMode(); return; }
             slot.SpinPress();
         }

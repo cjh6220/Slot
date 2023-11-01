@@ -122,7 +122,7 @@ namespace Mkey
             float distTileY = tileSizeY + gapY; //old float distTileY = 3.48f;
 
             anglePerTileDeg = 360.0f / (float)tileCount;
-            anglePerTileRad = anglePerTileDeg * Mathf.Deg2Rad;
+            anglePerTileRad = anglePerTileDeg * Mathf.Deg2Rad;            
             float radius = (distTileY / 2f) / Mathf.Tan(anglePerTileRad / 2.0f); //old float radius = ((tileCount + 1) * distTileY) / (2.0f * Mathf.PI);
 
             windowSize = rayCasters.Length;
@@ -161,7 +161,7 @@ namespace Mkey
 
                 slotSymbols[i] = Instantiate(tilePrefab, transform.position, Quaternion.identity).GetComponent<SlotSymbol>();
                 slotSymbols[i].transform.parent = TilesGroup;
-                slotSymbols[i].transform.localPosition = new Vector3(0, radius * Mathf.Sin(tileAngleRad), -radius * Mathf.Cos(tileAngleRad));
+                slotSymbols[i].transform.localPosition = new Vector3(0, radius * Mathf.Sin(tileAngleRad), -radius * Mathf.Cos(tileAngleRad)); 
                 slotSymbols[i].transform.localScale = Vector3.one;
                 slotSymbols[i].transform.localEulerAngles = new Vector3(tileAngleDeg, 0, 0);
                 slotSymbols[i].name = "SlotSymbol: " + String.Format("{0:00}", i);
@@ -212,6 +212,7 @@ namespace Mkey
             // check range before start
             inRotTime = Mathf.Clamp(inRotTime, 0, 1f);
             inRotAngle = Mathf.Clamp(inRotAngle, 0, 10);
+            Debug.LogError("inRotTime = " + inRotTime + " / inRotAngle " + inRotAngle);
 
             outRotTime = Mathf.Clamp(outRotTime, 0, 1f);
             outRotAngle = Mathf.Clamp(outRotAngle, 0, 10);
@@ -221,7 +222,8 @@ namespace Mkey
             tS = new TweenSeq();
             float angleX = 0;
             tempSectors = 0;
-
+            
+            Debug.LogError("inRotType = " + inRotType);
             tS.Add((callBack) => // in rotation part
             {
                 SimpleTween.Value(gameObject, 0f, inRotAngle, inRotTime)
