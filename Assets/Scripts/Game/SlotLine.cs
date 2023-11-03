@@ -81,6 +81,8 @@ public class SlotLine : MonoBehaviour
             obj.transform.localScale = Vector3.one;
             obj.transform.localEulerAngles = new Vector3(tileAngleDeg, 0, 0);
             obj.name = "SlotSymbol: " + String.Format("{0:00}", i);
+
+            obj.GetComponent<SlotItem>().SetIconOrder(i);
             //slotSymbols[i] = Instantiate(tilePrefab, transform.position, Quaternion.identity).GetComponent<SlotSymbol>();
             //slotSymbols[i].transform.parent = TilesGroup;
             //slotSymbols[i].transform.localPosition = new Vector3(0, radius * Mathf.Sin(tileAngleRad), -radius * Mathf.Cos(tileAngleRad));

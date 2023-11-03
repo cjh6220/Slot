@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 21221170}
   - component: {fileID: 5897628}
   - component: {fileID: -5807908765914165239}
+  - component: {fileID: 4383233450723078069}
   m_Layer: 0
   m_Name: SlotTile
   m_TagString: Untagged
@@ -117,7 +118,7 @@ MonoBehaviour:
   sR: {fileID: 21221170}
   OriginImg: {fileID: 21300000, guid: a380eaf558f635943925f4dfd64c1a20, type: 3}
   SpinImg: {fileID: 21300000, guid: 0f7fda31384ad0544aae2e461b6952a6, type: 3}
-  deformer: {fileID: 0}
+  STM: {fileID: 4383233450723078069}
   OriginImgList:
   - {fileID: 21300000, guid: a380eaf558f635943925f4dfd64c1a20, type: 3}
   - {fileID: 21300000, guid: ca6a84a237661ea43bff4d9d9d961b97, type: 3}
@@ -160,3 +161,16 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 3143007241e21604f9dcdf63708287a0, type: 3}
   - {fileID: 21300000, guid: 0f300df4c1884f2408b20e08f05bd41c, type: 3}
   - {fileID: 21300000, guid: 4cb742ed1ae9e044abdc732fb97176f8, type: 3}
+--- !u!114 &4383233450723078069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 192170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52ca6e97bd15d6f488e920d8e571b874, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m: {fileID: 2100000, guid: 874a33573a10616468109c338e435522, type: 2}

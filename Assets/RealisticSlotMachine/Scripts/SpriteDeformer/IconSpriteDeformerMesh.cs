@@ -55,6 +55,10 @@ namespace Mkey
 
         private void Update()
         {
+            if (this.name == "SlotSymbol: 00")
+        {
+            //Debug.LogError("Name = " + name + " / SortingOrder = " + SortingOrder + " / SortingLayerID = " + SortingLayerID);
+        }
           if(canUpdate)  UpdateVertexPerspectiveReel();
         }
         #endregion regular
@@ -67,6 +71,8 @@ namespace Mkey
 
             mR.sortingLayerID = SortingLayerID;
             mR.sortingOrder = SortingOrder;
+
+            Debug.LogError("Name = " + name + " / SortingOrder = " + SortingOrder + " / SortingLayerID = " + SortingLayerID);
         }
 
         public void CreateMesh(Vector3 wCenterPosition)
@@ -84,6 +90,7 @@ namespace Mkey
             mHeight = t2d.height / ppu;
             SortingOrder = sr.sortingOrder;
             SortingLayerID = sr.sortingLayerID;
+            
             DestroyImmediate(GetComponent<SpriteRenderer>());
 
             vertexCount = (width + 1) * (height + 1);

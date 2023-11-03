@@ -9,7 +9,7 @@ public class SlotItem : MonoBehaviour
     public Sprite OriginImg;
     public Sprite SpinImg;
     [SerializeField]
-    private IconSpriteDeformerMesh deformer;
+    private SpriteToMesh STM;
     public List<Sprite> OriginImgList;
     public List<Sprite> SpinImgList;
 
@@ -37,6 +37,11 @@ public class SlotItem : MonoBehaviour
         sR.sprite = OriginImg;
     }
 
+    public void SetIconOrder(int num)
+    {
+        //sR.sortingOrder = num;
+    }
+
     private void SetIcon(bool blur)
     {
         if (SpinImg == null) return;
@@ -44,7 +49,10 @@ public class SlotItem : MonoBehaviour
         {
             sR.sprite = (!blur) ? OriginImg : SpinImg;
         }
-
+        else if (STM)
+        {
+            STM.SetTexture((!blur) ? OriginImg.texture : SpinImg.texture);
+        }
         // else if (deformer)
         // {
         //     deformer.SetTexture((!blur) ? OriginImg.texture : SpinImg.texture);
