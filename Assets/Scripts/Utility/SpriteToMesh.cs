@@ -53,10 +53,6 @@ public class SpriteToMesh : MonoBehaviour
 
     private void Update()
     {
-        if (this.name == "SlotSymbol: 00")
-        {
-            //Debug.LogError("Name = " + name + " / SortingOrder = " + SortingOrder + " / SortingLayerID = " + SortingLayerID);
-        }
         if (canUpdate) UpdateVertexPerspectiveReel();
     }
     #endregion regular
@@ -69,13 +65,6 @@ public class SpriteToMesh : MonoBehaviour
 
         mR.sortingLayerID = SortingLayerID;
         mR.sortingOrder = SortingOrder;
-
-        
-
-        // if (this.name == "SlotSymbol: 00")
-        // {
-        //     mR.sortingOrder = 0;
-        // }
     }
 
     public void CreateMesh(Vector3 wCenterPosition)

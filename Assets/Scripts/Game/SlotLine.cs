@@ -82,7 +82,7 @@ public class SlotLine : MonoBehaviour
             obj.transform.localEulerAngles = new Vector3(tileAngleDeg, 0, 0);
             obj.name = "SlotSymbol: " + String.Format("{0:00}", i);
 
-            obj.GetComponent<SlotItem>().SetIconOrder(i);
+            
             //slotSymbols[i] = Instantiate(tilePrefab, transform.position, Quaternion.identity).GetComponent<SlotSymbol>();
             //slotSymbols[i].transform.parent = TilesGroup;
             //slotSymbols[i].transform.localPosition = new Vector3(0, radius * Mathf.Sin(tileAngleRad), -radius * Mathf.Cos(tileAngleRad));
@@ -94,6 +94,7 @@ public class SlotLine : MonoBehaviour
 
     public void StartSpin(float spinStartDelay)
     {
+        //NextOrderPosition = UnityEngine.Random.Range(0,tileCount);
         Debug.LogError("스핀 시작");
         tS = new TweenSeq();
         float angleX = 0;
@@ -113,13 +114,13 @@ public class SlotLine : MonoBehaviour
                                   .AddCompleteCallBack(() =>
                                   {
                                       callBack();
-                                  }).SetEase(EaseAnim.EaseLinear).SetDelay(spinStartDelay);
+                                  }).SetEase(EaseAnim.EaseLinear).SetDelay(spinStartDelay/5);
             });
 
         float addRotateTime = 0f;
         float mainRotateTimeRandomize = 0.1f;
         float mainRotTime = 3;
-        float spinSpeedMultiplier = 1;
+        float spinSpeedMultiplier = 2;
         float outRotAngle = 7f;
         
         tS.Add((callBack) =>  // main rotation part
