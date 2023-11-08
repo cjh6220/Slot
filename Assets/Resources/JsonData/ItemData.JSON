@@ -1,0 +1,29 @@
+{
+  "datas": [
+    {
+      "id": "1",
+      "name": "Item_1",
+      "resource": "Item_1"
+    },
+    {
+      "id": "2",
+      "name": "Item_2",
+      "resource": "Item_2"
+    },
+    {
+      "id": "3",
+      "name": "Item_3",
+      "resource": "Item_3"
+    },
+    {
+      "id": "4",
+      "name": "Joker",
+      "resource": "Joker"
+    },
+    {
+      "id": "5",
+      "name": "Scatter",
+      "resource": "Scatter"
+    }
+  ]
+}
