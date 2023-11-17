@@ -24,6 +24,8 @@ public class SlotLine : MonoBehaviour
     public int NextOrderPosition { get; private set; }
     public int CurrOrderPosition { get; private set; }
 
+    public SlotItem[] slotItem = new SlotItem[3];
+
     public void CreateSlotCylinder()
     {
         // create Reel transform
@@ -82,6 +84,11 @@ public class SlotLine : MonoBehaviour
             obj.transform.localEulerAngles = new Vector3(tileAngleDeg, 0, 0);
             obj.name = "SlotSymbol: " + String.Format("{0:00}", i);
 
+            if (i < 3)
+            {
+                slotItem[i] = obj.GetComponent<SlotItem>();
+            }
+
             
             //slotSymbols[i] = Instantiate(tilePrefab, transform.position, Quaternion.identity).GetComponent<SlotSymbol>();
             //slotSymbols[i].transform.parent = TilesGroup;
@@ -132,6 +139,10 @@ public class SlotLine : MonoBehaviour
 
             spinSpeedMultiplier = Mathf.Max(0, spinSpeedMultiplier);
             angleX = GetAngleToNextSymb(NextOrderPosition) + anglePerTileDeg * tileCount * spinSpeedMultiplier;
+            for (int i = 0; i < slotItem.Length; i++)
+            {
+                slotItem[i].ChangeItem(1);
+            }
             //if (debugreel) Debug.Log(name + ", angleX : " + angleX);
             SimpleTween.Value(gameObject, 0, -(angleX + outRotAngle + inRotAngle), mainRotTime)
                               .SetOnUpdate((float val) =>

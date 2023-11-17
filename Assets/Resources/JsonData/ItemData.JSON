@@ -2,28 +2,103 @@
   "datas": [
     {
       "id": "1",
-      "name": "Item_1",
-      "resource": "Item_1"
+      "name": "1Bar",
+      "resource": "1Bar"
     },
     {
       "id": "2",
-      "name": "Item_2",
-      "resource": "Item_2"
+      "name": "2Bar",
+      "resource": "2Bar"
     },
     {
       "id": "3",
-      "name": "Item_3",
-      "resource": "Item_3"
+      "name": "3Bar",
+      "resource": "3Bar"
     },
     {
       "id": "4",
-      "name": "Joker",
-      "resource": "Joker"
+      "name": "7",
+      "resource": "7"
     },
     {
       "id": "5",
+      "name": "10",
+      "resource": "10"
+    },
+    {
+      "id": "6",
+      "name": "A",
+      "resource": "A"
+    },
+    {
+      "id": "7",
+      "name": "Bell",
+      "resource": "Bell"
+    },
+    {
+      "id": "8",
+      "name": "Bonus",
+      "resource": "Bonus"
+    },
+    {
+      "id": "9",
+      "name": "Cherries",
+      "resource": "Cherries"
+    },
+    {
+      "id": "10",
+      "name": "FreeSpin",
+      "resource": "FreeSpin"
+    },
+    {
+      "id": "11",
+      "name": "Grape",
+      "resource": "Grape"
+    },
+    {
+      "id": "12",
+      "name": "J",
+      "resource": "J"
+    },
+    {
+      "id": "13",
+      "name": "Jackpot",
+      "resource": "Jackpot"
+    },
+    {
+      "id": "14",
+      "name": "K",
+      "resource": "K"
+    },
+    {
+      "id": "15",
+      "name": "Lemon",
+      "resource": "Lemon"
+    },
+    {
+      "id": "16",
+      "name": "Melon",
+      "resource": "Melon"
+    },
+    {
+      "id": "17",
+      "name": "Orrange",
+      "resource": "Orrange"
+    },
+    {
+      "id": "18",
+      "name": "Q",
+      "resource": "Q"
+    },
+    {
+      "id": "19",
       "name": "Scatter",
       "resource": "Scatter"
+    },
+    {
+      "id": "20",
+      "name": "Wild",
+      "resource": "Wild"
     }
   ]
 }

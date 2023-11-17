@@ -19,7 +19,8 @@ public class SlotItem : MonoBehaviour
 
     private void Start()
     {
-        SetIcon(Random.Range(0, OriginImgList.Count));
+        var ranNum = Random.Range(0, GameDataManager.Instance.ItemList.Length);
+        SetIcon(ranNum);
     }
 
     private void Update()
@@ -32,14 +33,18 @@ public class SlotItem : MonoBehaviour
 
     public void SetIcon(int num)
     {
-        OriginImg = OriginImgList[num];
-        SpinImg = SpinImgList[num];
-        sR.sprite = OriginImg;
+        var data = GameDataManager.Instance.ItemList[num];
+        OriginImg = GameDataManager.Instance.GetItemImg(data.resource, false);
+        SpinImg = GameDataManager.Instance.GetItemImg(data.resource, true);
+        if (sR != null)
+        {
+            sR.sprite = OriginImg;    
+        }
     }
 
-    public void SetIconOrder(int num)
+    public void ChangeItem(int num)
     {
-        //sR.sortingOrder = num;
+        SetIcon(num);
     }
 
     private void SetIcon(bool blur)
