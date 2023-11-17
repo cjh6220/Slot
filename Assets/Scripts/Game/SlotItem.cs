@@ -10,8 +10,6 @@ public class SlotItem : MonoBehaviour
     public Sprite SpinImg;
     [SerializeField]
     private SpriteToMesh STM;
-    public List<Sprite> OriginImgList;
-    public List<Sprite> SpinImgList;
 
     private Vector3 pos;
     private Vector3 oldPos;
