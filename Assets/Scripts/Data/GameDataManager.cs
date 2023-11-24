@@ -7,7 +7,7 @@ public class GameDataManager : SingletonBase<GameDataManager>
 {
     public SlotItemData[] ItemList;
     public LineRateData[] LineRates = new LineRateData[5];
-    CalRandom _calRandom;
+    public CalRandom _calRandom;
     
     private void Start()
     {
@@ -15,11 +15,11 @@ public class GameDataManager : SingletonBase<GameDataManager>
         SetRateData();
         
         _calRandom = this.gameObject.AddComponent<CalRandom>();
-        var test = _calRandom.GetRandom(LineRates[0]);
-        for (int i = 0; i < test.Count; i++)
-        {
-            Debug.LogError(test[i]);
-        }
+        // var test = _calRandom.GetRandom(LineRates[0]);
+        // for (int i = 0; i < test.Count; i++)
+        // {
+        //     Debug.LogError(test[i]);
+        // }
     }
 
     public class ItemDatas

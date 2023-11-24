@@ -99,10 +99,10 @@ public class SlotLine : MonoBehaviour
         }
     }
 
-    public void StartSpin(float spinStartDelay)
+    public void StartSpin(float spinStartDelay, List<int> ids)
     {
         //NextOrderPosition = UnityEngine.Random.Range(0,tileCount);
-        Debug.LogError("스핀 시작");
+        //Debug.LogError("스핀 시작");
         tS = new TweenSeq();
         float angleX = 0;
         float inRotAngle = 7f;
@@ -139,9 +139,10 @@ public class SlotLine : MonoBehaviour
 
             spinSpeedMultiplier = Mathf.Max(0, spinSpeedMultiplier);
             angleX = GetAngleToNextSymb(NextOrderPosition) + anglePerTileDeg * tileCount * spinSpeedMultiplier;
+
             for (int i = 0; i < slotItem.Length; i++)
             {
-                slotItem[i].ChangeItem(1);
+                slotItem[i].ChangeItem(ids[i]);
             }
             //if (debugreel) Debug.Log(name + ", angleX : " + angleX);
             SimpleTween.Value(gameObject, 0, -(angleX + outRotAngle + inRotAngle), mainRotTime)

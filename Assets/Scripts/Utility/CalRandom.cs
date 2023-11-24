@@ -9,7 +9,6 @@ public class CalRandom : MonoBehaviour
         var selectedNum = new List<int>();
         while (selectedNum.Count < 3)
         {
-            Debug.LogError("들어옴");
             var num = Random.Range(0, 10000);
 
             int addNum = 0;
@@ -22,7 +21,6 @@ public class CalRandom : MonoBehaviour
                 {
                     if (!selectedNum.Contains(data.Line[i].id))
                     {
-                        Debug.LogError("값 추가 = " + data.Line[i].id);
                         selectedNum.Add(data.Line[i].id);
                     }
                     break;
