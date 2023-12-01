@@ -7,6 +7,7 @@ using Mkey;
 
 public class SlotLine : MonoBehaviour
 {
+    public GameController GC;
     public Mkey.RayCaster[] rayCasters;
     public int tileCount = 30;
     public GameObject tilePrefab;
@@ -178,12 +179,18 @@ public class SlotLine : MonoBehaviour
                                   .AddCompleteCallBack(() =>
                                   {
                                       CurrOrderPosition = NextOrderPosition;
+                                      SpinEnd();
                                       //rotCallBack?.Invoke();
                                       callBack();
                                   }).SetEase(EaseAnim.EaseLinear);
             });
 
         tS.Start();
+    }
+
+    void SpinEnd()
+    {
+        GC.SpinEndChecker();
     }
 
     private float GetAngleToNextSymb(int nextOrderPosition)

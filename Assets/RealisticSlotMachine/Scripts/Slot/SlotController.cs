@@ -527,10 +527,10 @@ namespace Mkey
                 {
                     pT.Add((callBack) =>
                     {
-                        Debug.LogError("mainRotateType = " + mainRotateType + " / inRotType = " + inRotType + " / outRotType = " + outRotType
-                         + " / mainRotateTime = " + mainRotateTime + " / mainRotateTimeRandomize / 100f = " + mainRotateTimeRandomize / 100f 
-                         + " / inRotTime = " + inRotTime + " / outRotTime = " + outRotTime + " / inRotAngle = " + inRotAngle + " / outRotAngle = " + outRotAngle
-                         + " / r = " + r);
+                        // Debug.LogError("mainRotateType = " + mainRotateType + " / inRotType = " + inRotType + " / outRotType = " + outRotType
+                        //  + " / mainRotateTime = " + mainRotateTime + " / mainRotateTimeRandomize / 100f = " + mainRotateTimeRandomize / 100f 
+                        //  + " / inRotTime = " + inRotTime + " / outRotTime = " + outRotTime + " / inRotAngle = " + inRotAngle + " / outRotAngle = " + outRotAngle
+                        //  + " / r = " + r);
                         slotGroupsBeh[n].NextRotateCylinderEase(mainRotateType, inRotType, outRotType,
                             mainRotateTime, mainRotateTimeRandomize / 100f,
                             inRotTime, outRotTime, inRotAngle, outRotAngle,

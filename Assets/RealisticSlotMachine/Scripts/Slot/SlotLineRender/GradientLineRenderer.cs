@@ -38,7 +38,7 @@ namespace Mkey
         public override void Create(LinesController linesController, LineBehavior lineBehavior)
         {
             base.Create(linesController,  lineBehavior);
-
+            
             wfef = new WaitForEndOfFrame();
             Material mat = (!material) ? new Material(Shader.Find("Sprites/Default")) : material;
 

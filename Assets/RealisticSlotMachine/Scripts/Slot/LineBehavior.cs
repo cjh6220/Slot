@@ -75,6 +75,7 @@ namespace Mkey
         /// <param name="linesController"></param>
         internal void InitStart(SlotController slot, LinesController linesController, SlotLineRenderer lineRendererPrefab, bool useLinesControllerMaterial)
         {
+            Debug.LogError("InitStart");
             IsWinTweenComplete = true;
             this.linesController = linesController;
             this.slot = slot;

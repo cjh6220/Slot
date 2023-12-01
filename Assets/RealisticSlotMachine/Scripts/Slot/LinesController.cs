@@ -174,6 +174,7 @@ namespace Mkey
 
         private void CreateLine(RayCaster [] raycasters, int number)
         {
+            Debug.LogError("CreateLine");
             GameObject l = new GameObject();
             LineBehavior lB = l.AddComponent<LineBehavior>();
             l.transform.parent = transform.transform;

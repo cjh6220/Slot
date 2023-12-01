@@ -171,7 +171,7 @@ public class MatchChecker : SingletonBase<MatchChecker>
 
         for (int i = 1; i < numbers.Length; i++)
         {
-            if (numbers[0] == numbers[i])
+            if (numbers[0] == numbers[i] || numbers[i] == 7)
             {
                 count += 1;
             }

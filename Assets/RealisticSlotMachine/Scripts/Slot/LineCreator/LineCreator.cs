@@ -67,7 +67,7 @@ namespace Mkey
         private void CreateInitialHandles()
         {
             if (curveCreated) return;
-            Debug.Log("create initial curve");
+            Debug.LogError("create initial curve");
             LineBehavior lineBehavior = GetComponent<LineBehavior>();
             int rCount = 0;
             handlesPositions = new List<Vector3>();
